@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,10 +33,11 @@ public class DataBase1 {
 //			@deprecated Class.forName("com.mysql.jdbc.Driver");
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			//2. 	获得连接。使用JDBC中的类,完成对MySQL数据库的连接
-//			DriverManager.registerDriver(driver);
+//			DriverManager.registerDriver(driver);不推荐，原因重复注册驱动
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/store?serverTimezone=GMT%2B8", "root", "root");
 			//3.	获得语句执行平台：通过连接对象获取对SQL语句的执行者对象
 			String sql = "SELECT * FROM user LIMIT ?,?";
+			//conn.createStatement();不推荐，会有sql注入问题
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setLong(1, 0);//parameterIndex 从1开始
 			statement.setLong(2, 1);//parameterIndex 从1开始
@@ -92,7 +94,6 @@ public class DataBase1 {
 		}
 		
 	}
-	
 	
 	private void setPropertyQuietly(Object bean,String name,Object value) {
 		try {
