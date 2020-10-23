@@ -33,6 +33,10 @@ CREATE TABLE `user` (
   PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+INSERT INTO store.user (uid, username, password, name, email, telephone, birthday, sex, state, code) VALUES ('25b2d909-e565-43a3-aa00-f1500d5367e0', 'xiaoming3', '123', '小明3', 'xiaoming@163.com', '123xxxxxxxxxxx', '2020-10-23', '男', 1, '322423xxxxxxxxxxxx');
+INSERT INTO store.user (uid, username, password, name, email, telephone, birthday, sex, state, code) VALUES ('50e59e85-197c-4e4b-9d44-9d79309d8479', 'xiaoming', '123', '小明', 'xiaoming@163.com', '123xxxxxxxxxxx', '2020-10-23', '男', 1, '322423xxxxxxxxxxxx');
+INSERT INTO store.user (uid, username, password, name, email, telephone, birthday, sex, state, code) VALUES ('d154349d-5cbd-40da-8353-e44fdd26f4d4', 'xiaoming2', '123', '小明2', 'xiaoming@163.com', '123xxxxxxxxxxx', '2020-10-23', '男', 1, '322423xxxxxxxxxxxx');
 -- ----------------------------
 -- Records of user
 -- ----------------------------

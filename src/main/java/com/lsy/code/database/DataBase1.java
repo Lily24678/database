@@ -2,13 +2,16 @@ package com.lsy.code.database;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
@@ -26,8 +29,10 @@ public class DataBase1 {
 		try {
 			
 			//1. 	注册驱动。告知JVM使用的是哪一个数据库的驱动
-			Class.forName("com.mysql.jdbc.Driver");
+//			@deprecated Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			//2. 	获得连接。使用JDBC中的类,完成对MySQL数据库的连接
+//			DriverManager.registerDriver(driver);
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/store?serverTimezone=GMT%2B8", "root", "root");
 			//3.	获得语句执行平台：通过连接对象获取对SQL语句的执行者对象
 			String sql = "SELECT * FROM user LIMIT ?,?";
@@ -48,8 +53,6 @@ public class DataBase1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-
 	}
 	
 	@Test
@@ -101,4 +104,5 @@ public class DataBase1 {
 			e.printStackTrace();
 		}
 	}
+	
 }
