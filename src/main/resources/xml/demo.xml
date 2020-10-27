@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE 书架 SYSTEM "./bookcase.dtd">
+<书架>
+	<书 类型="历史">
+		<书名>阿甘正传</书名>
+		<作者>【美】温斯顿·葛鲁姆</作者>
+		<售价>36.00</售价>
+	</书>
+</书架> -->
+<itheima:书架 xmlns:itheima="http://www.itheima.com"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.itheima.com bookcase.xsd">
+	<书 类型="文学">
+		<书名>阿甘正传</书名>
+		<作者>【美】温斯顿·葛鲁姆</作者>
+		<售价>36.00</售价>
+	</书>
+</itheima:书架>

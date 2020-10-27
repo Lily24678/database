@@ -11,11 +11,6 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.dom4j.Attribute;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.Element;
-import org.dom4j.io.SAXReader;
 import org.junit.Test;
 
 import com.lsy.code.database.domain.User;
@@ -85,30 +80,5 @@ public class TestDemo {
 		}
 	}
 
-	@Test
-	public void test3_xml() throws DocumentException {
-		SAXReader reader = new SAXReader();
-		Document document = reader.read("xml/demo.xml");
-		Element root = document.getRootElement();
-		getNodes(root);
 
-	}
-
-	public void getNodes(Element node) {
-
-		// 当前节点的名称、文本内容和属性
-		System.out.println("----------"+node.getName()+"----------");
-		System.out.println("文本内容：" + node.getText());
-
-		List<Attribute> listAttr = node.attributes();// 当前节点的所有属性的list
-		for (Attribute attr : listAttr) {// 遍历当前节点的所有属性
-			System.out.println("属性：" + attr.getName() + "=" + attr.getValue());
-		}
-		
-		// 递归遍历当前节点所有的子节点
-		List<Element> listElement = node.elements();// 所有一级子节点的list
-		for (Element e : listElement) {// 遍历所有一级子节点
-			this.getNodes(e);// 递归
-		}
-	}
 }

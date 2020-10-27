@@ -41,3 +41,25 @@ org.apache.commons.dbcp.BasicDataSourceFactory;
 - com.mchange.v2.c3p0.ComboPooledDataSource;
 
 ### 自定义连接池（CustomPool）
+
+
+# XML 文档解析
+- com.lsy.code.xml.Dom4j1.java
+### dom4j(dom4j-xxx.jar)
+```
+<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+<dependency>
+    <groupId>dom4j</groupId>
+    <artifactId>dom4j</artifactId>
+    <version>1.6.1</version>
+</dependency>
+```
+### XPath 表达式(jaxen-xxx-beta-xxx.jar)
+```
+<!-- https://mvnrepository.com/artifact/jaxen/jaxen -->
+<dependency>
+          <groupId>jaxen</groupId>
+          <artifactId>jaxen</artifactId>
+          <version>1.2.0</version>
+</dependency>
+```

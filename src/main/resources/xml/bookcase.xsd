@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema' targetNamespace='http://www.itheima.com'>
+    <xs:element name='书架' >
+        <xs:complexType>
+            <xs:sequence maxOccurs='unbounded' >
+                <xs:element name='书'>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name='书名' type='xs:string' />
+                            <xs:element name='作者' type='xs:string' />
+                            <xs:element name='售价' type='xs:string' />
+                        </xs:sequence>
+                        <xs:attribute name="类型" use="required">
+							<xs:simpleType>
+							  <xs:restriction base="xs:string">
+							    <xs:enumeration value="历史"/>
+							    <xs:enumeration value="文学"/>
+							    <xs:enumeration value="科技"/>
+							    <xs:enumeration value="地理"/>
+							    <xs:enumeration value="生物"/>
+							    <xs:enumeration value="计算机"/>
+							    <xs:enumeration value="其他"/>
+							  </xs:restriction>
+							</xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
