@@ -44,8 +44,8 @@ org.apache.commons.dbcp.BasicDataSourceFactory;
 
 
 # XML 文档解析
-- com.lsy.code.xml.Dom4j1.java
 ### dom4j(dom4j-xxx.jar)
+- com.lsy.code.xml.Dom4j1.java
 ```
 <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
 <dependency>
@@ -63,3 +63,5 @@ org.apache.commons.dbcp.BasicDataSourceFactory;
           <version>1.2.0</version>
 </dependency>
 ```
+### JavaSE API 解析xml
+com.lsy.code.xml.XMLParseUtils
